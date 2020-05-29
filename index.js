@@ -36,7 +36,6 @@ client.on("message", async message => {
     if(message.content.includes("a")){a+=1}
     if(a>=30){message.channel.send("!Olá Rapazeada!"); a=0}
 
-    //if(message.author.bot) return;
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const comando = args.shift().toLowerCase();
     let prefix = config.prefix;
@@ -46,4 +45,5 @@ client.on("message", async message => {
     if(!message.content.startsWith(config.prefix))return;
     if(cmfiles) cmfiles.run(client,message,args);
     if(!message.guild || message.content.indexOf(config.prefix) !== 0) return;
+
 });
