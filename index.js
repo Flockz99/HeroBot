@@ -46,15 +46,4 @@ client.on("message", async message => {
     if(!message.content.startsWith(config.prefix))return;
     if(cmfiles) cmfiles.run(client,message,args);
     if(!message.guild || message.content.indexOf(config.prefix) !== 0) return;
-
-    if(comando==="r" && message.author.id ==="148116372314914816")
-        {
-            message.channel.send('Reiniciando...').then(m => {
-                client.destroy()
-                console.log("Desligado")
-
-                client.login(config.token);
-                console.log("Ligado")
-            });
-        }
 });
